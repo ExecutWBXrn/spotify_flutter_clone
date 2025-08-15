@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 Widget AlbumCard({required String src, String? name, String? description}) {
   return SizedBox(
@@ -115,4 +116,66 @@ Widget MainText(String src) {
       ),
     ),
   );
+}
+
+Widget startLook(String str, Color color, {double height = 50.0}) {
+  return Padding(
+    padding: EdgeInsets.all(5),
+    child: Stack(
+      children: <Widget>[
+        Container(
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          height: height,
+        ),
+        Positioned(
+          top: 5,
+          left: 10,
+          child: Text(
+            str,
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+List<TableRow> addRows(List<String> names, double height) {
+  final random = Random();
+
+  final List<Color> colors = [
+    Colors.pink.shade600,
+    Colors.green.shade800,
+    Colors.blue.shade900,
+    Colors.deepPurpleAccent,
+    Colors.deepOrange,
+    Colors.blueGrey,
+    Colors.grey,
+    Colors.brown,
+    Colors.red.shade700,
+  ];
+
+  return [
+    for (int i = 0; i < names.length; i += 2)
+      TableRow(
+        children: [
+          startLook(
+            names[i],
+            colors[random.nextInt(colors.length)],
+            height: height,
+          ),
+          if (names.last != names[i])
+            startLook(
+              names[i + 1],
+              colors[random.nextInt(colors.length)],
+              height: height,
+            )
+          else
+            Text(""),
+        ],
+      ),
+  ];
 }

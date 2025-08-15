@@ -8,7 +8,6 @@ Widget HOME_PAGE() {
       Padding(
         padding: EdgeInsets.only(left: 13, right: 13, top: 60),
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
