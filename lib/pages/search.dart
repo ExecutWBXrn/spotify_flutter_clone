@@ -75,6 +75,7 @@ Widget SEARCH_PAGE() {
               Row(
                 children: [
                   CircleAvatar(
+                    radius: 15,
                     backgroundImage: NetworkImage(
                       "https://i.pinimg.com/736x/87/a3/2d/87a32d0d64776b0bb06f7cb2a3fc3248.jpg",
                     ),
