@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotify/pages/home.dart';
 import 'package:spotify/pages/search.dart';
 import 'pages/mylibra.dart';
+import 'package:spotify/pages/premium.dart';
 
 void main() {
   runApp(HomePage());
@@ -37,7 +38,7 @@ class HomePageState extends State<HomePage> {
       home: Scaffold(
         body: IndexedStack(
           index: _currentIndex,
-          children: [HOME_PAGE(), SEARCH_PAGE(), MY_LIBRARY()],
+          children: [HOME_PAGE(), SEARCH_PAGE(), MY_LIBRARY(), PREMIUM()],
         ),
         extendBody: true,
         bottomNavigationBar: Container(
